@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioLearning - Tema 1</title>
+    <title>BioLearning - Tema 2.1 Conjuntos Numéricos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -20,6 +20,7 @@
         .nav-btn.active { border-color: #10b981; color: #10b981; }
         @keyframes pulse-dot { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
         .dot-pulse { animation: pulse-dot 1.2s infinite; }
+        .question-img { max-width: 100%; height: auto; border-radius: 0.5rem; margin: 0.5rem 0; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans min-h-screen">
@@ -59,9 +60,9 @@
     <script>
         const DRIVE_PDF_URL = "https://drive.google.com/file/d/1I5_QQ_nh6AUEXNd4bwBoa6VA1ddT8Cih/view?usp=sharing";
         const DRIVE_VIDEO_URL = "https://drive.google.com/file/d/1L5NOBSiydckjkKzseokrE1Mp_GTiT0P-/view?usp=sharing";
-        
+
         // PRINCIPAL (Deber + Repaso) 30/10 preguntas
-        const quizData = [
+const quizData = [
             { question: '¿Cuál de los siguientes números no pertenece al conjunto de los números irracionales?', options: ['&radic;5', '7/4', 'e', '2&radic;2'], answer: '7/4', explanation: '7/4: los números racionales se puede expresar como fracción.', multi: 'OFF', maxSelect: 1 },
             { question: '¿Cuál de los siguientes números es un número imaginario?', options: ['4', '&radic;-1', '3.5', '-2'], answer: '&radic;-1', explanation: '&radic;-1: corresponde a un número imaginario.', multi: 'OFF', maxSelect: 1 },
             { question: '¿Cuál de los siguientes números no pertenece al conjunto de los números racionales?', options: ['1/3', '0.75', '&radic;7', '-5'], answer: '&radic;7', explanation: '&radic;7 : Las raíces inexactas corresponden a números irracionales.', multi: 'OFF', maxSelect: 1 },
@@ -94,8 +95,8 @@
             { question: '<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mfrac><msqrt><mn>40</mn><msup><mi>a</mi><mn>5</mn></msup><msup><mi>b</mi><mn>2</mn></msup></msqrt><msqrt><mn>5</mn><mi>a</mi><mi>b</mi></msqrt></mfrac></math>', options: ['<math> <mfrac> <mi>2&radic;2ab</mi> <mn>5</mn> </mfrac> </math>', '2b&radic;2a', '2a<sup>2</sup> &radic;2b', '<math> <mfrac> <mi>2&radic;2ab</mi> <mn>ab</mn> </mfrac> </math>'], answer: '2a<sup>2</sup> &radic;2b', explanation: ' <br> <img src="https://i.ibb.co/qM9SpwKy/Captura-de-pantalla-2026-09-26-112106.png" alt="Descripción de la imagen" width="450" height="250">.', multi: 'OFF', maxSelect: 1 },
         ];
 
-        // Practica 20 preguntas
-        const quizDataExtra = [
+        // Práctica 20 preguntas
+const quizDataExtra = [
             { question: 'Cuál es el valor de la expresión: <br> &radic;8+&radic;18−&radic;50', options: ['0', '&radic;2', '2&radic;2', '&radic;10'], answer: '0', explanation: '<br> <img src="https://i.ibb.co/W4vwW4sy/Captura-de-pantalla-2026-10-07-152701.png" alt="Descripción de la imagen" width="450" height="250">.', multi: 'OFF', maxSelect: 1 },
             { question: 'Cuál es el valor de la expresión: <br> 3&radic;5+2&radic;20−4&radic;45', options: ['&radic;5', '&radic;2', '-5&radic;5', '&radic;10'], answer: '-5&radic;5', explanation: '<br> <img src="https://i.ibb.co/Q7z4hS1r/Captura-de-pantalla-2026-10-08-131654.png" alt="Descripción de la imagen" width="450" height="350">', multi: 'OFF', maxSelect: 1 },
             { question: 'Cuál es el valor de la expresión: <br> 4&radic;2+&radic;32−3&radic;8', options: ['2&radic;2', '3&radic;2', '2&radic;3', '-2&radic;5'], answer: '2&radic;2', explanation: '<br> <img src="https://i.ibb.co/cXKw97q0/Captura-de-pantalla-2026-10-08-132205.png" alt="Descripción de la imagen" width="450" height="350">.', multi: 'OFF', maxSelect: 1 },
@@ -118,8 +119,8 @@
             { question: 'Si <math> <mfrac> <mi>3</mi> <mn>4</mn> </mfrac> </math>+0.15=𝑥, entonces:', options: ['0.85', '0.90', '0.95', '1.00'], answer: '0.90', explanation: '<br> <img src="https://i.ibb.co/Z1kHh5br/Captura-de-pantalla-2026-10-08-155450.png" alt="Descripción de la imagen" width="300" height="380">.', multi: 'OFF', maxSelect: 1 },
         ];
 
-        // EVALUACIÓN (16 preguntas)
-        const quizDataEvaluacion = [
+        // EVALUACIÓN 16 preguntas
+const quizDataEvaluacion = [
             { question: '¿Cuál de los siguientes números es irracional?', options: ['3/4', '0,25', '&radic;5', '-7'], answer: '&radic;5', explanation: '<br> <img src="https://i.ibb.co/mFbYjzfR/Captura-de-pantalla-2026-10-10-094629.png" alt="Descripción de la imagen" width="500" height="300">.', multi: 'OFF', maxSelect: 1 },
             { question: '¿Cuál de los siguientes números NO pertenece al conjunto de los números irracionales?', options: ['&pi;', '&radic;2', 'e', '1/4'], answer: '1/4', explanation: '<br> <img src="https://i.ibb.co/PG61F68Y/Captura-de-pantalla-2026-10-10-095212.png" alt="Descripción de la imagen" width="500" height="200">.', multi: 'OFF', maxSelect: 1 },
             { question: 'El número 1,3333... es:', options: ['Irracional', 'Racional', 'Imaginario', 'Complejo no real'], answer: 'Racional', explanation: '<br> <img src="https://i.ibb.co/Ng7c88xR/Captura-de-pantalla-2026-10-10-095713.png" alt="Descripción de la imagen" width="500" height="280">.', multi: 'OFF', maxSelect: 1 },
@@ -138,6 +139,16 @@
             { question: 'Pregunta16', options: ['OP1', 'OP2', 'OP3', 'OP4'], answer: 'OP1', explanation: 'Explicación16.', multi: 'OFF', maxSelect: 1 },
         ];
 
+        // ========== CONFIGURACIÓN DEL TEMPORIZADOR DE EVALUACIÓN ==========
+        const EVAL_TIMER_SECONDS = 960; // 16 minutos
+
+        const EVAL_TIMER_PHASES = [
+            { minSeconds: 480, colorClass: 'text-emerald-600 bg-emerald-50 border-emerald-300' },
+            { minSeconds: 60,  colorClass: 'text-amber-600 bg-amber-50 border-amber-300' },
+            { minSeconds: 0,   colorClass: 'text-red-600 bg-red-50 border-red-300' }
+        ];
+        // ==================================================================
+
         let state = {
             currentMode: 'deber',
             view: 'quiz_home',
@@ -150,8 +161,11 @@
             isAnswerCorrect: null,
             emailStatus: null,
             emailAnalysis: null,
-            emailAnalysisMsg: ''
+            emailAnalysisMsg: '',
+            timeLeft: 0
         };
+
+        let timerInterval = null;
 
         const disposableDomains = [
             'tempmail.com','temp-mail.org','guerrillamail.com','10minutemail.com','mailinator.com',
@@ -171,16 +185,10 @@
 
         function analyzeEmail(email) {
             const lower = email.toLowerCase().trim();
-            if (!lower) {
-                return { valid: false, msg: 'Escribe un correo electrónico.' };
-            }
-            if (!isValidEmailFormat(lower)) {
-                return { valid: false, msg: 'Formato inválido. Revisa que tenga @ y un dominio correcto.' };
-            }
+            if (!lower) return { valid: false, msg: 'Escribe un correo electrónico.' };
+            if (!isValidEmailFormat(lower)) return { valid: false, msg: 'Formato inválido. Revisa que tenga @ y un dominio correcto.' };
             const domain = lower.split('@')[1];
-            if (!domain || domain.length < 3) {
-                return { valid: false, msg: 'Dominio incompleto o inválido.' };
-            }
+            if (!domain || domain.length < 3) return { valid: false, msg: 'Dominio incompleto o inválido.' };
             if (disposableDomains.some(d => domain === d || domain.endsWith('.' + d))) {
                 return { valid: false, msg: 'Correo temporal / desechable detectado. Usa un correo real.' };
             }
@@ -205,18 +213,19 @@
         function showSection(section, btn) {
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            stopTimer();
             const app = document.getElementById('app');
             if (section === 'pdf') {
-                app.innerHTML = `<div class="animate-fade-in"><h2 class="text-xl font-bold mb-4">📄 Pizarra Virtual</h2><div class="iframe-container"><iframe src="${DRIVE_PDF_URL}" width="100%" height="100%"></iframe></div></div>`;
+                app.innerHTML = `<div class="animate-fade-in"><h2 class="text-xl font-bold mb-4">📄 Pizarra Virtual</h2><div class="iframe-container"><iframe src="${DRIVE_PDF_URL}" width="100%" height="100%" allow="autoplay"></iframe></div></div>`;
             } else if (section === 'video') {
-                app.innerHTML = `<div class="animate-fade-in"><h2 class="text-xl font-bold mb-4">🎥 Video Clase</h2><div class="iframe-container"><iframe src="${DRIVE_VIDEO_URL}" width="100%" height="100%"></iframe></div></div>`;
+                app.innerHTML = `<div class="animate-fade-in"><h2 class="text-xl font-bold mb-4">🎥 Video Clase</h2><div class="iframe-container"><iframe src="${DRIVE_VIDEO_URL}" width="100%" height="100%" allow="autoplay"></iframe></div></div>`;
             }
         }
 
         function prepQuiz(mode, btn) {
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-           
+            stopTimer();
             state = {
                 currentMode: mode,
                 view: 'quiz_home',
@@ -229,20 +238,21 @@
                 isAnswerCorrect: null,
                 emailStatus: null,
                 emailAnalysis: null,
-                emailAnalysisMsg: ''
+                emailAnalysisMsg: '',
+                timeLeft: 0
             };
             render();
         }
 
         function startQuiz() {
             if (state.currentMode === 'deber') {
-                state.activeQuestions = [...quizData].slice(0, 30);
+                state.activeQuestions = [...quizData];
             } else if (state.currentMode === 'evaluacion') {
                 state.activeQuestions = [...quizData]
                     .sort(() => 0.5 - Math.random())
                     .slice(0, 10);
             } else if (state.currentMode === 'extra') {
-                state.activeQuestions = [...quizDataExtra].slice(0, 20);
+                state.activeQuestions = [...quizDataExtra];
             } else if (state.currentMode === 'evaluacion_final') {
                 state.activeQuestions = [...quizDataEvaluacion];
             }
@@ -317,10 +327,55 @@
             state.studentName = n;
             state.studentEmail = e;
             state.view = 'playing';
+            if (state.currentMode === 'evaluacion_final') {
+                startTimer();
+            }
             render();
         }
 
-        // ---------- LÓGICA SINGLE + MULTI ----------
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function getTimerPhaseClass(remaining) {
+            for (const phase of EVAL_TIMER_PHASES) {
+                if (remaining >= phase.minSeconds) {
+                    return phase.colorClass;
+                }
+            }
+            return EVAL_TIMER_PHASES[EVAL_TIMER_PHASES.length - 1].colorClass;
+        }
+
+        function startTimer() {
+            stopTimer();
+            state.timeLeft = EVAL_TIMER_SECONDS;
+            timerInterval = setInterval(() => {
+                state.timeLeft--;
+                if (state.timeLeft <= 0) {
+                    state.timeLeft = 0;
+                    stopTimer();
+                    state.view = 'results';
+                    render();
+                    enviarCorreo();
+                    return;
+                }
+                const timerEl = document.getElementById('eval-timer');
+                if (timerEl) {
+                    timerEl.textContent = formatTime(state.timeLeft);
+                    timerEl.className = `px-3 py-1.5 rounded-xl border-2 font-black text-sm tabular-nums ${getTimerPhaseClass(state.timeLeft)}`;
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
         function isMultiQuestion(q) {
             return q.multi === 'ON';
         }
@@ -383,6 +438,7 @@
                 state.isAnswerCorrect = null;
                 render();
             } else {
+                stopTimer();
                 state.view = 'results';
                 render();
                 enviarCorreo();
@@ -452,7 +508,7 @@
                 modeDesc = 'Resuelve las 20 preguntas de la Práctica.';
             } else if (state.currentMode === 'evaluacion_final') {
                 modeTitle = '📊 Evaluación';
-                modeDesc = 'Resuelve las 16 preguntas de la Evaluación.';
+                modeDesc = 'Resuelve las 16 preguntas de la Evaluación (tiempo límite: 16 min).';
             }
            
             if (state.view === 'quiz_home') {
@@ -497,21 +553,27 @@
                     ? (Array.isArray(state.selectedAnswer) ? state.selectedAnswer : [])
                     : (state.selectedAnswer ? [state.selectedAnswer] : []);
 
-                // Indicador de selección múltiple (CORREGIDO)
                 const multiHint = multi
                     ? `<p class="text-sm text-sky-600 font-semibold mb-4">
-                         Selección múltiple · elige q.maxSelectrespuesta{q.maxSelect > 1 ? 's' : ''}
+                         Selección múltiple · elige ${q.maxSelect} respuesta${q.maxSelect > 1 ? 's' : ''}
                          ${selected.length > 0 ? `(${selected.length}/${q.maxSelect})` : ''}
                        </p>`
                     : '';
 
+                const timerHtml = (state.currentMode === 'evaluacion_final')
+                    ? `<div id="eval-timer" class="px-3 py-1.5 rounded-xl border-2 font-black text-sm tabular-nums ${getTimerPhaseClass(state.timeLeft)}">
+                           ${formatTime(state.timeLeft)}
+                       </div>`
+                    : '';
+
                 app.innerHTML = `
                 <div class="animate-fade-in">
-                    <div class="flex justify-between items-center mb-6 px-4">
+                    <div class="flex justify-between items-center mb-6 px-4 gap-4">
                         <span class="font-black text-emerald-600">${state.currentQuestion + 1} / ${state.activeQuestions.length}</span>
-                        <div class="w-48 bg-slate-200 h-2 rounded-full overflow-hidden">
+                        <div class="flex-1 max-w-xs bg-slate-200 h-2 rounded-full overflow-hidden">
                             <div class="bg-emerald-500 h-full transition-all" style="width:${progress}%"></div>
                         </div>
+                        ${timerHtml}
                     </div>
                     <div class="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border">
                         <h2 class="text-2xl font-bold text-slate-800 mb-2 leading-tight">${q.question}</h2>
@@ -532,7 +594,6 @@
                                             style = "border-emerald-300 bg-emerald-50 text-emerald-700";
                                         }
                                     } else {
-                                        // Single (incluye V/F): resaltar la correcta siempre + la incorrecta si se eligió
                                         if (opt === q.answer) {
                                             style = "border-emerald-500 bg-emerald-100 text-emerald-800";
                                         } else if (isSelected) {
@@ -553,17 +614,18 @@
                                         </button>`;
                             }).join('')}
                         </div>
-                        ${/* Botón comprobar (solo multi) - CORREGIDO */
-                          multi && state.isAnswerCorrect === null ? `
+
+                        ${multi && state.isAnswerCorrect === null ? `
                             <button onclick="checkMultiAnswer()" 
                                 class="mt-6 w-full py-4 rounded-xl font-bold transition-all
                                 ${selected.length === q.maxSelect 
                                     ? 'bg-sky-600 text-white hover:bg-sky-700' 
                                     : 'bg-slate-200 text-slate-400 cursor-not-allowed'}"
                                 ${selected.length !== q.maxSelect ? 'disabled' : ''}>
-                                Comprobar respuesta (selected.length/{q.maxSelect})
+                                Comprobar respuesta (${selected.length}/${q.maxSelect})
                             </button>
                         ` : ''}
+
                         ${state.selectedAnswer !== null && state.isAnswerCorrect === false ? `
                             <div class="mt-6 p-5 bg-amber-50 border border-amber-200 rounded-xl">
                                 <p class="font-bold text-amber-800 mb-2">Explicación:</p>
@@ -599,5 +661,3 @@
     </script>
 </body>
 </html>
-
-
